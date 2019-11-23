@@ -1,0 +1,8 @@
+const Discord = require('discord.js')
+const config = require('./config.json')
+const client = new Discord.Client()
+client.commands = new Discord.Collection()
+client.aliases = new Discord.Collection()
+require('./core/events.js')(client)
+require('./core/functions.js')(client)
+client.login(config.token)
